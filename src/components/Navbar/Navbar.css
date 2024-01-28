@@ -1,0 +1,96 @@
+/* Navbar.css */
+
+body {
+  font-family: 'Martian Mono', monospace;
+}
+
+.navbar {
+  display: flex;
+  align-items: center; /* Ensures vertical centering of items */
+  padding: 0.05rem 5%; /* Further reduced vertical padding */
+  color: #ffffff;
+  width: 100%;
+  z-index: 50;
+  position: relative;
+  border-bottom: none; /* Ensuring no dividing line */
+  box-shadow: none; /* Ensuring no dividing line */
+}
+
+.nav-logo img {
+  height: 100PX;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #ffffff; /* Keeping it white for contrast */
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-links a:hover {
+  color: #4CAF50; /* Modern green color on hover */
+  background-color: #f0f0f0; /* Light background on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+      display: block;
+      transition: transform 0.3s; /* Smooth transition for hover */
+  }
+
+  .hamburger-menu:hover {
+      transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0; /* Ensure it spans the full width */
+      background: linear-gradient(135deg, #6D83F2 0%, #A8C0FF 100%); /* Modern gradient background */
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+      padding: 15px; /* Added padding for better spacing */
+  }
+
+  .nav-links.show {
+      display: flex;
+  }
+
+  .nav-links a {
+      display: flex; /* Flex layout for aligning text and icon */
+      align-items: center; /* Center align items */
+      padding: 12px 20px;
+      color: #333; /* Darker text color for contrast */
+      margin: 5px 0; /* Spacing between options */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Light separator for each item */
+  }
+
+  .nav-links a:before {
+      content: '▸'; /* Mini icon before each link */
+      margin-right: 10px; /* Spacing between icon and text */
+  }
+
+  .navbar {
+      justify-content: space-between;
+  }
+}

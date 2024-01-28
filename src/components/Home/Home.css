@@ -1,0 +1,109 @@
+/* Home.css */
+.home-section {
+  min-height: calc(100vh - 10vh);
+  background: linear-gradient(135deg, #005f73, #e0aaff);
+  background-size: 100% calc(200vh - 10vh); /* Increased size */
+  background-position: 0 -10vh;
+  animation: gradientAnimation 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 0 20px;
+  overflow: auto; /* In case content is bigger than the space */
+  position: relative; /* Needed to establish a stacking context for z-index */
+  z-index: 1; /* Ensure it's above other elements */
+}
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.social-media-links img {
+  width: 40px; 
+  height: 40px; 
+  cursor: pointer;
+}
+.social-logo {
+  width: 40px; 
+  height: 40px; 
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth scaling transition */
+}
+
+.social-logo:hover {
+  transform: scale(1.1); /* Slightly enlarge logos on hover */
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  transition: transform 0.5s;
+  margin-bottom: 2rem;
+}
+
+.home-content h1:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px; /* Adjust the space between buttons as needed */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Align the buttons vertically */
+  margin-top: 2rem; /* Space between the text and the buttons */
+}
+
+.btn-primary {
+  padding: 15px 30px;
+  background-color: #002855;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px #000000;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px); /* Lift the button on hover */
+  background-color: #6497d1;
+  color: #ffff;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+  }
+
+  .home-buttons {
+    flex-direction: column; /* Stack the buttons vertically on small screens */
+    gap: 10px;
+  }
+}
