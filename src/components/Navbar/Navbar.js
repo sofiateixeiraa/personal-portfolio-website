@@ -31,7 +31,7 @@ const Navbar = () => {
             <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
                 <li><Link to="/" onClick={closeMenu}>Home</Link></li>
                 <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-                <li><Link to="/skills" onClick={closeMenu}>Skills</Link></li>
+                <li><Link to="/about#skills" onClick={closeMenu}>Skills</Link></li>
                 <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
             </ul>
         </nav>

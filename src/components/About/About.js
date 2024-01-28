@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './About.css';
 import portoLogo from '../../assets/uporto.png';
 import padovaLogo from '../../assets/upadua.png'; 
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    const hash = location.hash;
+    if (hash && hash === "#skills") {
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        skillsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
     <div className={`about-container ${isVisible ? 'about-container-active' : ''}`}>
@@ -58,7 +67,7 @@ const About = () => {
       </div>
       <section className="skills-section">
   <h2 className="section-title">Skills</h2>
-  <div className="skills-content">
+  <div className="skills-content" id="skills">
     <div className="skill-category">
       <h3>Languages</h3>
       <ul>
