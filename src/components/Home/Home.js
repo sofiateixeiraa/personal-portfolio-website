@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <section id="home" className="home-section">
       <div className="home-content" data-aos="fade-up">
-        <h1>Hey, I'm Sofia Teixeira</h1>
-        <p>Cloud enthusiast | Electrical and Computer Engineer</p>
+        <h1>Hey, I'm Sofia Teixeira 👋</h1>
+        <p>Cloud enthusiast | Electrical and Computer Engineer | PhD Engineering Student</p>
         <div className="home-buttons">
           <a href="/about" className="btn-primary" data-aos="fade-up" data-aos-delay="300">Discover My Work</a>
           <a href="/contact" className="btn-primary" data-aos="fade-up" data-aos-delay="300">Contact Me</a>
